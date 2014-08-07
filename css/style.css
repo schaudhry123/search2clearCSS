@@ -1,0 +1,48 @@
+#magnifying-glass {
+    font-size: 5em; /* Controls the size */
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border: 0.1em solid black;
+    position: relative;
+    border-radius: 0.35em;
+}
+#magnifying-glass::before {
+    content:"";
+    display: inline-block;
+    position: absolute;
+    right: -0.25em;
+    bottom: -0.1em;
+    border-width: 0;
+    background: red;
+    width: 0.35em;
+    height: 0.08em;
+    transition: transform .2s ease-in-out;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+#magnifying-glass:hover::before {
+    background: black;
+    transform: translate3d(-78%, -350%, 0px) rotate(45deg);
+}
+#newhandle {
+  /*  visibility: hidden; /* Disappears when going back to magnifying glass though */
+    display: inline-block;
+    background: red;
+    position: absolute;
+    right: -0.25em;
+    bottom: -0.1em;
+    width: 0.35em;
+    height: 0.08em;
+    transition: transform .2s ease-in-out;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+#magnifying-glass:hover > #newhandle {
+    visibility: visible;
+    transform: translate3d(-78%, -350%, 0px) rotate(-45deg);
+}
